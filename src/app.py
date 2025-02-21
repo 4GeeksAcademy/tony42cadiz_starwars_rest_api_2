@@ -63,7 +63,7 @@ def get_users():
 
 @app.route('/users/favorites', methods=['GET'])
 def get_user_favorites():
-    user_id = 1  # ID de usuario ficticio hasta que haya autenticación
+    user_id = 1 
     favorites = Favorite.query.filter_by(user_id=user_id).all()
     return jsonify([{'id': f.id, 'people_id': f.people_id, 'planet_id': f.planet_id} for f in favorites])
 
